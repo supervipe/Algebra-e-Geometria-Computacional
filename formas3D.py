@@ -70,6 +70,62 @@ class Cube:
         glVertex3f(self.points[7][0],self.points[7][1],self.points[7][2])
 
         glEnd()
+    def rotatex3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatex3D(self.points[i],ang)
+        return self.points
+    def rotatey3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatey3D(self.points[i],ang)
+        return self.points
+    def rotatez3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatez3D(self.points[i],ang)
+        return self.points
+    def projxz3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projxz3D(self.points[i])
+        return self.points
+    def projyx3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projyx3D(self.points[i])
+        return self.points
+    def projzy3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projzy3D(self.points[i])
+        return self.points
+    def cisalhamento3D(self,ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().cisalhamento3D(self.points[i],ang)
+        return self.points
+    def reflex3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().reflex3D(self.points[i])
+        return self.points
+    def refley3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().refley3D(self.points[i])
+        return self.points
+    def reflez3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().reflez3D(self.points[i])
+        return self.points
+    def transla3D(self,x,y,z):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().transla3D(self.points[i],x,y,z)
+        return self.points
+    def escalonamentoz3D(self,z):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoz3D(self.points[i],z)
+        return self.points
+    def escalonamentoy3D(self,y):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoy3D(self.points[i],y)
+        return self.points
+    def escalonamentox3D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox3D(self.points[i],x)
+        return self.points
 
 class Para:
     def __init__(self, x, y, z, width, height, length):
@@ -181,9 +237,17 @@ class Para:
         for i in range(0, len(self.points)):
             self.points[i] = Transf().transla3D(self.points[i],x,y,z)
         return self.points
-    def escalonamento3D(self,x,y,z):
+    def escalonamentoz3D(self,z):
         for i in range(0, len(self.points)):
-            self.points[i] = Transf().escalonamento3D(self.points[i],x,y,z)
+            self.points[i] = Transf().escalonamentoz3D(self.points[i],z)
+        return self.points
+    def escalonamentoy3D(self,y):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoy3D(self.points[i],y)
+        return self.points
+    def escalonamentox3D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox3D(self.points[i],x)
         return self.points
 
 class Piram:
@@ -233,6 +297,63 @@ class Piram:
         glVertex3f(self.points[1][0],self.points[1][1],self.points[1][2])
         glVertex3f(self.points[4][0],self.points[4][1],self.points[4][2])
         glEnd()
+
+    def rotatex3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatex3D(self.points[i],ang)
+        return self.points
+    def rotatey3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatey3D(self.points[i],ang)
+        return self.points
+    def rotatez3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatez3D(self.points[i],ang)
+        return self.points
+    def projxz3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projxz3D(self.points[i])
+        return self.points
+    def projyx3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projyx3D(self.points[i])
+        return self.points
+    def projzy3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projzy3D(self.points[i])
+        return self.points
+    def cisalhamento3D(self,ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().cisalhamento3D(self.points[i],ang)
+        return self.points
+    def reflex3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().reflex3D(self.points[i])
+        return self.points
+    def refley3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().refley3D(self.points[i])
+        return self.points
+    def reflez3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().reflez3D(self.points[i])
+        return self.points
+    def transla3D(self,x,y,z):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().transla3D(self.points[i],x,y,z)
+        return self.points
+    def escalonamentoz3D(self,z):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoz3D(self.points[i],z)
+        return self.points
+    def escalonamentoy3D(self,y):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoy3D(self.points[i],y)
+        return self.points
+    def escalonamentox3D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox3D(self.points[i],x)
+        return self.points
 
 class Sphere:
     # Params:
@@ -297,6 +418,62 @@ class Sphere:
                 k2 = k2 + 1
 
             glEnd()
+    def rotatex3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatex3D(self.points[i],ang)
+        return self.points
+    def rotatey3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatey3D(self.points[i],ang)
+        return self.points
+    def rotatez3D(self, ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().rotatez3D(self.points[i],ang)
+        return self.points
+    def projxz3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projxz3D(self.points[i])
+        return self.points
+    def projyx3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projyx3D(self.points[i])
+        return self.points
+    def projzy3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().projzy3D(self.points[i])
+        return self.points
+    def cisalhamento3D(self,ang):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().cisalhamento3D(self.points[i],ang)
+        return self.points
+    def reflex3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().reflex3D(self.points[i])
+        return self.points
+    def refley3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().refley3D(self.points[i])
+        return self.points
+    def reflez3D(self):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().reflez3D(self.points[i])
+        return self.points
+    def transla3D(self,x,y,z):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().transla3D(self.points[i],x,y,z)
+        return self.points
+    def escalonamentoz3D(self,z):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoz3D(self.points[i],z)
+        return self.points
+    def escalonamentoy3D(self,y):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentoy3D(self.points[i],y)
+        return self.points
+    def escalonamentox3D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox3D(self.points[i],x)
+        return self.points
 class Transf:
     def reflex3D(self, point):
         x,y,z = point
@@ -444,12 +621,40 @@ class Transf:
         z = dom[3,1] #
         return [x,y,z]
 
-    def escalonamento3D(self, point, x, y, z):
+    def escalonamentox3D(self, point, x):
         xp,yp,zp = point
         dom = Matrix(3, 1, [xp,yp,zp])
-        k = Matrix(3, 3)
+        k = Matrix(3,3)
         k[1,1] = x
+        k[2,2] = 1
+        k[3,3] = 1
+
+        dom = k.dot(dom)
+        xp = dom[1,1]
+        yp = dom[2,1]
+        zp = dom[3,1]
+        return [xp,yp,zp]
+
+    def escalonamentoy3D(self, point, y):
+        xp,yp,zp = point
+        dom = Matrix(3, 1, [xp,yp,zp])
+        k = Matrix(3,3)
+        k[1,1] = 1
         k[2,2] = y
+        k[3,3] = 1
+
+        dom = k.dot(dom)
+        xp = dom[1,1]
+        yp = dom[2,1]
+        zp = dom[3,1]
+        return [xp,yp,zp]
+
+    def escalonamentoz3D(self, point,z):
+        xp,yp,zp = point
+        dom = Matrix(3, 1, [xp,yp,zp])
+        k = Matrix(3,3)
+        k[1,1] = 1
+        k[2,2] = 1
         k[3,3] = z
 
         dom = k.dot(dom)
@@ -498,7 +703,7 @@ if __name__ == "__main__":
     glTranslate(0.0, 0.0, -10)
 
     square = Para(0,0,0, 1,3,2)
-    square.projyx3D()
+    square.escalonamentoz3D(2)
 
     while True:
         for event in pygame.event.get():
