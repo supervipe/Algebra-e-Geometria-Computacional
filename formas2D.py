@@ -65,9 +65,13 @@ class Square:
         for i in range(0, len(self.points)):
             self.points[i] = Transf().transla2D(self.points[i],x,y)
         return self.points
-    def escalonamento(self,x,y):
+    def escalonamentoy2D(self,y):
         for i in range(0, len(self.points)):
-            self.points[i] = Transf().escalonamento(self.points[i],x,y)
+            self.points[i] = Transf().escalonamentoy2D(self.points[i],y)
+        return self.points
+    def escalonamentox2D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox2D(self.points[i],x)
         return self.points
 
 class Retan:
@@ -131,9 +135,13 @@ class Retan:
         for i in range(0, len(self.points)):
             self.points[i] = Transf().transla2D(self.points[i],x,y)
         return self.points
-    def escalonamento(self,x,y):
+    def escalonamentoy2D(self,y):
         for i in range(0, len(self.points)):
-            self.points[i] = Transf().escalonamento(self.points[i],x,y)
+            self.points[i] = Transf().escalonamentoy2D(self.points[i],y)
+        return self.points
+    def escalonamentox2D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox2D(self.points[i],x)
         return self.points
 
 class Trian:
@@ -194,9 +202,13 @@ class Trian:
         for i in range(0, len(self.points)):
             self.points[i] = Transf().transla2D(self.points[i],x,y)
         return self.points
-    def escalonamento(self,x,y):
+    def escalonamentoy2D(self,y):
         for i in range(0, len(self.points)):
-            self.points[i] = Transf().escalonamento(self.points[i],x,y)
+            self.points[i] = Transf().escalonamentoy2D(self.points[i],y)
+        return self.points
+    def escalonamentox2D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox2D(self.points[i],x)
         return self.points
 
 
@@ -249,9 +261,13 @@ class Line:
         for i in range(0, len(self.points)):
             self.points[i] = Transf().transla2D(self.points[i],x,y)
         return self.points
-    def escalonamento(self,x,y):
+    def escalonamentoy2D(self,y):
         for i in range(0, len(self.points)):
-            self.points[i] = Transf().escalonamento(self.points[i],x,y)
+            self.points[i] = Transf().escalonamentoy2D(self.points[i],y)
+        return self.points
+    def escalonamentox2D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox2D(self.points[i],x)
         return self.points
 
 class Circle:
@@ -314,9 +330,13 @@ class Circle:
         for i in range(0, len(self.points)):
             self.points[i] = Transf().transla2D(self.points[i],x,y)
         return self.points
-    def escalonamento(self,x,y):
+    def escalonamentoy2D(self,y):
         for i in range(0, len(self.points)):
-            self.points[i] = Transf().escalonamento(self.points[i],x,y)
+            self.points[i] = Transf().escalonamentoy2D(self.points[i],y)
+        return self.points
+    def escalonamentox2D(self,x):
+        for i in range(0, len(self.points)):
+            self.points[i] = Transf().escalonamentox2D(self.points[i],x)
         return self.points
 
 
@@ -419,11 +439,23 @@ class Transf:
         y = dom[2,1]
         return [x,y]
 
-    def escalonamento(self, point, x, y):
+    def escalonamentox2D(self, point, x):
         xp,yp = point
         dom = Matrix(2, 1, [xp,yp])
         z = Matrix(2, 2)
         z[1,1] = x
+        z[2,2] = 1
+
+        dom = z.dot(dom)
+        xp = dom[1,1]
+        yp = dom[2,1]
+        return [xp,yp]
+
+    def escalonamentoy2D(self, point, y):
+        xp,yp = point
+        dom = Matrix(2, 1, [xp,yp])
+        z = Matrix(2, 2)
+        z[1,1] = 1
         z[2,2] = y
 
         dom = z.dot(dom)
@@ -440,7 +472,7 @@ if __name__ == "__main__":
     glTranslate(0.0, 0.0, -10)
 
     square = Circle(0,0, 1,50)
-    square.escalonamento(2,4)
+    square.escalonamentox2D(2)
 
     while True:
         for event in pygame.event.get():
