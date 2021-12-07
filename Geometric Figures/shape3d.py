@@ -499,7 +499,7 @@ class Sphere:
             for j in range(0, self.sectors):
 
                 if i != 0:
-                    glColor(1.0, 0.9 - 0.04 * j, 1.0)
+                    glColor(0.45, 0.9 - 0.04 * j, 0.45)
                     glVertex3f(
                         self.points[k1][0], self.points[k1][1], self.points[k1][2])
                     glVertex3f(
@@ -508,7 +508,7 @@ class Sphere:
                         self.points[k1 + 1][0], self.points[k1 + 1][1], self.points[k1 + 1][2])
 
                 if i != (self.stacks - 1):
-                    glColor(1.0, 1.0,  0.9 - 0.04 * j)
+                    glColor(0.2, 0.2,  0.9 - 0.04 * j)
                     glVertex3f(
                         self.points[k1 + 1][0], self.points[k1 + 1][1], self.points[k1 + 1][2])
                     glVertex3f(
