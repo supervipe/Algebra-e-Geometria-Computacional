@@ -49,24 +49,24 @@ class FlowNetwork(object):
     path = self.FindPath(source, target, [])
     ini = []
     fim = []
-    print ('path after enter MaxFlow: %s' % path)
+    # print ('path after enter MaxFlow: %s' % path)
     for key in self.flow:
       print ('%s:%s' % (key, self.flow[key]))
-    print ('-' * 20)
+    # print ('-' * 20)
     while path != None:
       flow = min(res for edge, res in path)
       for edge, res in path:
         self.flow[edge] += flow
         self.flow[edge.redge] -= flow
-      for key in self.flow:
-        print ('%s:%s' % (key, self.flow[key]))
+      # for key in self.flow:
+      #   print ('%s:%s' % (key, self.flow[key]))
       path = self.FindPath(source, target, [])
-      print ('path inside of while loop: %s' % path)
+      # print ('path inside of while loop: %s' % path)
     for key in self.flow:
       v = ('%s' % (key))
       if "10" not in v:
         if "0" not in v and self.flow[key] != 0:
-          print ('%s:%s' % (key, self.flow[key]))
+          # print ('%s:%s' % (key, self.flow[key]))
           div = v.split("->")
           ini.append(div[0])
           div = div[1].split(":")
@@ -80,7 +80,8 @@ class FlowNetwork(object):
     return sum(self.flow[edge] for edge in self.GetEdges(source)),ini,fim
 
 
-if __name__ == "__main__":
+# if __name__ == "__main__":
+def fluxoMaximo():
   g = FlowNetwork()
   map(g.AddVertex, ['brasil', 'usa', 'canada', 'russia', 'portugal', 'argentina', 'africaSul', 'egito', 'india', 'australia', 'japao'])
   g.AddEdge('brasil', 'usa', 7)
@@ -101,4 +102,4 @@ if __name__ == "__main__":
   g.AddEdge('australia', 'india', 10)
   g.AddEdge('australia', 'japao', 11)
   g.AddEdge('russia', 'japao', 7)
-  print(g.MaxFlow('brasil', 'japao'))
+  return g.MaxFlow('brasil', 'japao')
